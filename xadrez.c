@@ -11,10 +11,6 @@ void moverPeca(int casasParaMover, char peca){
         printf("Direita.\n");
         moverPeca(casasParaMover-1, peca);
         break;
-    case 'b':
-        printf("Cima, Direita. \n");
-        moverPeca(casasParaMover-1, peca);
-        break;
     case 'r':
         printf("Esquerda.\n");
         moverPeca(casasParaMover-1, peca);
@@ -25,6 +21,18 @@ void moverPeca(int casasParaMover, char peca){
     }
 }
 
+void moverBispo(int casasParaMover){
+    if(casasParaMover <= 0 )
+        return;
+
+    for (int vertical = 0; vertical < 1; vertical++) {
+        printf("Cima,");
+        for (int horizontal = 0; horizontal < 1; horizontal++) {
+            printf(" Direita \n");
+        }
+        moverBispo(casasParaMover -1);
+    }
+}
 
 int main()
 {
@@ -43,7 +51,7 @@ int main()
     moverPeca(movimentacaoTorre, 't');
 
     printf("\n \nMovimentação Bispo:\n \n");
-    moverPeca(movimentacaoBispo, 'b');
+    moverBispo(movimentacaoBispo);
 
     printf("\n \nMovimentação Rainha:\n \n");
     moverPeca(movimentacaoRainha, 'r');
