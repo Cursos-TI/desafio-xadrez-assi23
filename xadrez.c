@@ -21,6 +21,7 @@ void moverPeca(int casasParaMover, char peca){
     }
 }
 
+//Move apenas uma casa na vertical e uma na horizontal e depois chama novamente a funcão. Aplicando assim a recursividade.
 void moverBispo(int casasParaMover){
     if(casasParaMover <= 0 )
         return;
